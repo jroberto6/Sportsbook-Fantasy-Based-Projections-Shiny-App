@@ -2,11 +2,11 @@
 
 Weekly NFL fantasy projections built from sportsbook player props, shown in a Shiny app that ranks players by position under standard, half PPR, or PPR scoring.
 
-**Idea:** sportsbooks lose money when a line is wrong, so prop lines carry more pressure to be accurate than free fantasy-site projections. This project turns those lines into expected fantasy points and compares them against ESPN and CBS.
+**Idea:** Sportsbook lines are more accurate than free fantasy-site projections. This project turns those lines into expected fantasy points and compares them against ESPN and CBS.
 
 ## What the app does
 
-- Rankings by QB, RB, WR, TE, or FLEX (RB/WR/TE together), with a scoring toggle
+- Rankings by QB, RB, WR, TE, and FLEX (RB/WR/TE), with a scoring toggle between PPR, Half PPR, and Standard
 - Team logos, player search, and the underlying stat projections for each player
 - A lineup tool: pick your roster and get the optimal starters for the chosen scoring format
 - A "last updated" timestamp showing when the props were pulled
@@ -30,7 +30,7 @@ Weekly NFL fantasy projections built from sportsbook player props, shown in a Sh
 
 ## Backtest
 
-Results coming. The plan: score projections from props, ESPN, and CBS with the same formula, compare each against actual fantasy points from `nflreadr` on the players all sources projected, and report MAE, bias, and rank accuracy by position. Sample sizes will be stated alongside every result.
+I just made the app, so the backtest results will be coming soon. The plan: score projections from props, ESPN, and CBS with the same formula, compare each against actual fantasy points from nflreadr on the players all sources projected, and report MAE, bias, and rank accuracy by position. Sample sizes will be stated alongside every result.
 
 ## Files
 
@@ -54,4 +54,4 @@ The free Odds API plan allows 500 credits per month. A full slate costs about 90
 
 Raw props and scraped projections are not included in this repo. They come from third-party sources with their own terms. Check those terms before redistributing any data.
 
-This project is for analysis and education. It is not betting advice.
+NOT BETTING ADVICE!!
