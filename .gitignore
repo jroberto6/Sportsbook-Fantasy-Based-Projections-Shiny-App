@@ -1,0 +1,7 @@
+.Rhistory
+.RData
+.Renviron
+.Rproj.user/
+rsconnect/
+data/*
+!data/teams.csv
