@@ -4,6 +4,7 @@ Weekly NFL fantasy projections built from sportsbook player props, shown in a Sh
 
 **Idea:** Sportsbook lines are more accurate than free fantasy-site projections. This project turns those lines into expected fantasy points and compares them against ESPN and CBS.
 ![Rankings tab](app_rankings.png)
+
 ![Lineup tool](my_lineup.png)
 
 ## What the app does
