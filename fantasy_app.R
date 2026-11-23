@@ -11,6 +11,17 @@ proj <- read_csv(latest, show_col_types = FALSE)
 teams <- read_csv("data/teams.csv", show_col_types = FALSE)
 proj  <- proj |> left_join(teams, by = "team")
 
+logo_cell <- function(d) {
+  colDef(
+    width = 70, align = "center",
+    cell = function(value, index) {
+      if (is.na(value)) d$Abbr[index]
+      else tags$img(src = value, height = 26,
+                    alt = d$Abbr[index], title = d$Abbr[index])
+    }
+  )
+}
+
 ui <- fluidPage(
   titlePanel("Sportsbook-Based Fantasy Projections"),
   sidebarLayout(
@@ -114,16 +125,21 @@ server <- function(input, output, session) {
   })
   
   output$lineup <- renderReactable({
-    lineup_res()$starters |>
-      transmute(Slot = slot, Player = player, Pos = position, Team = team,
-                `Proj pts` = round(pts, 1)) |>
-      reactable(striped = TRUE)
+    d <- lineup_res()$starters |>
+      transmute(Slot = slot, Player = player, Pos = position,
+                Team = team_logo, Abbr = team,
+                `Proj pts` = round(pts, 1))
+    reactable(d, striped = TRUE,
+              columns = list(Team = logo_cell(d), Abbr = colDef(show = FALSE)))
   })
   
   output$bench <- renderReactable({
-    lineup_res()$bench |>
-      transmute(Player = player, Pos = position, Team = team, `Proj pts` = round(pts, 1)) |>
-      reactable(striped = TRUE)
+    d <- lineup_res()$bench |>
+      transmute(Player = player, Pos = position,
+                Team = team_logo, Abbr = team,
+                `Proj pts` = round(pts, 1))
+    reactable(d, striped = TRUE,
+              columns = list(Team = logo_cell(d), Abbr = colDef(show = FALSE)))
   })
 }
 
