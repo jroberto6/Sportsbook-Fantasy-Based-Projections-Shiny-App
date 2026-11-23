@@ -2,7 +2,7 @@
 
 Weekly NFL fantasy projections built from sportsbook player props, shown in a Shiny app that ranks players by position under standard, half PPR, or PPR scoring.
 
-**Idea:** Sportsbook lines are more accurate than free fantasy-site projections. This project turns those lines into expected fantasy points and compares them against ESPN and CBS.
+**Idea:** Sportsbook lines are more accurate than free fantasy-site projections. This project turns those lines into expected fantasy points and compares them against the projections from ESPN and CBS.
 ![Rankings tab](app_rankings.png)
 
 
